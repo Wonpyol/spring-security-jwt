@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: spring-security-jwt
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jwt
+#    url: jdbc:h2:mem:jwt
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: false
+    defer-datasource-initialization: true
+    generate-ddl: true
+  sql:
+    init:
+      data-locations: classpath:data/data.sql
+
+jwt:
+  secret: VlwEyVBsYt9V7zq57TejMnVUyzblYcfPQye08f7MGVA9XkHa
