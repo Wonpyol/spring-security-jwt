@@ -20,6 +20,11 @@ spring:
   sql:
     init:
       data-locations: classpath:data/data.sql
+      mode: always
+
+logging:
+  level:
+    root: info
 
 jwt:
   secret: VlwEyVBsYt9V7zq57TejMnVUyzblYcfPQye08f7MGVA9XkHa

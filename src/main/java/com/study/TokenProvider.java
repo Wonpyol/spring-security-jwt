@@ -1,6 +1,6 @@
 package com.study;
 
-import com.study.dto.TokenInfo;
+import com.study.dto.TokenInfoDto;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -42,7 +42,7 @@ public class TokenProvider {
   /**
    * 토큰 생성
    */
-  public TokenInfo generateToken(Authentication authentication) {
+  public TokenInfoDto generateToken(Authentication authentication) {
     //권한 가져오기
     String authorities = getAuthorities(authentication);
     //엑세스 토큰 생성
@@ -50,7 +50,7 @@ public class TokenProvider {
     //리프레쉬 토큰 생성
     String refreshToken = createRefreshToken();
 
-    return TokenInfo.builder()
+    return TokenInfoDto.builder()
         .grantType("Bearer")
         .accessToken(accessToken)
         .refreshToken(refreshToken).build();

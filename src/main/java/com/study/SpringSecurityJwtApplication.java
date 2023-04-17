@@ -1,5 +1,6 @@
 package com.study;
 
+import org.hibernate.annotations.SQLInsert;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

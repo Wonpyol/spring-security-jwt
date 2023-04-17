@@ -16,7 +16,7 @@ import java.util.Set;
 @Builder
 public class Account {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "account_id")
     private Long id;
 

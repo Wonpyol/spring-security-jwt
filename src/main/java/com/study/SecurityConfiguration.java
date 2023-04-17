@@ -27,9 +27,9 @@ public class SecurityConfiguration {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeHttpRequests()
-                .requestMatchers("/members/login").permitAll()
-                .requestMatchers("/members/test").hasRole("USER")
-                .anyRequest().authenticated()
+                .requestMatchers("/login/token").permitAll()
+                .requestMatchers("/login/test").hasRole("USER")
+//                .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(new AuthenticationFilter(tokenProvider), UsernamePasswordAuthenticationFilter.class);
         return http.build();
